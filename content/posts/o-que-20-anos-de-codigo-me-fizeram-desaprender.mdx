@@ -1,0 +1,60 @@
+---
+title: "O que 20 anos de código me fizeram desaprender"
+description: "As crenças técnicas que eu tinha convicção absoluta — e que a experiência provou estarem completamente erradas."
+date: "2026-03-27"
+tags: ["carreira", "reflexão", "senior"]
+published: true
+image: "/images/posts/desaprender.jpg"
+---
+
+Depois de 20 anos escrevendo código, minha maior habilidade não é o que eu sei. É o que eu **desaprendi**.
+
+A gente começa a carreira acumulando certezas. Frameworks favoritos, padrões que "sempre funcionam", opiniões fortes sobre a "maneira certa" de fazer as coisas. E então, ano após ano, a realidade vai corroendo essas certezas até que você percebe: as suas convicções mais fortes eram as que mais te atrasavam.
+
+## 1. "Código limpo é código com muitas abstrações"
+
+No início, eu achava que um bom engenheiro era aquele que criava abstrações elegantes. Quanto mais layers, mais interfaces, mais patterns — melhor. Eu transformava funções de 10 linhas em arquiteturas de 500 linhas "por precaução".
+
+**O que desaprendi:** Abstração prematura é a raiz de grande parte da complexidade desnecessária. Hoje, eu escrevo o código mais simples e direto possível. Só abstraio quando a duplicação real (não imaginada) aparece pela terceira vez.
+
+> "Duplication is far cheaper than the wrong abstraction." — Sandi Metz
+
+## 2. "Quanto mais eu codar, mais produtivo eu sou"
+
+Minha métrica de produtividade era linhas de código por dia. Mais commits, mais PRs, mais features. Se eu passasse o dia inteiro em reuniões, era um dia "perdido".
+
+**O que desaprendi:** As decisões que mais impactaram os projetos que trabalhei foram tomadas longe do editor. Uma conversa de 30 minutos com o time de produto pode economizar semanas de desenvolvimento na direção errada. Minha semana mais produtiva como dev senior? Deletei 2.000 linhas de código e não escrevi nenhuma nova.
+
+## 3. "A melhor stack é a mais moderna"
+
+Toda vez que surgia um framework novo, eu queria migrar. "React acabou de lançar? Vamos reescrever." "Esse banco NoSQL novo é o futuro? Bora trocar o PostgreSQL." Eu era um early adopter compulsivo.
+
+**O que desaprendi:** Tecnologia madura e "chata" é frequentemente a melhor escolha. PostgreSQL resolve 90% dos problemas de banco de dados. Express ainda funciona perfeitamente para a maioria dos backends. A melhor stack é aquela que seu time domina e que resolve o problema — não a que tem mais stars no GitHub.
+
+## 4. "Trabalhar mais horas = entregar mais"
+
+No começo, eu usava horas extras como distintivo de honra. Ficar até tarde era sinônimo de comprometimento. Se o projeto estava atrasado, a solução era trabalhar no fim de semana.
+
+**O que desaprendi:** Depois de 6-7 horas de código intenso, a qualidade despenca. O bug que levou 4 horas para resolver às 23h teria levado 15 minutos na manhã seguinte. Consistência de 6 horas focadas vale mais que 12 horas de presença distraída.
+
+## 5. "Se funciona, não mexe"
+
+"O código tá feio, mas funciona." Quantas vezes eu disse isso? Evitar refactoring por medo de quebrar algo era meu default. Afinal, cliente feliz = código bom, certo?
+
+**O que desaprendi:** Código que "funciona mas ninguém quer tocar" é uma bomba-relógio. Cada dia que você adia o refactoring, o custo de mudá-lo aumenta. O melhor momento para melhorar código é quando ele está fresco na sua cabeça — não daqui a 6 meses quando ninguém lembra por que aquele `if` com 15 condições existe.
+
+---
+
+## O padrão por trás de tudo
+
+Olhando para trás, todos esses desaprendizados têm algo em comum: **eu estava otimizando para a métrica errada**.
+
+- Abstrações → otimizando para "elegância" em vez de clareza
+- Linhas de código → otimizando para output em vez de outcome
+- Stack moderna → otimizando para novidade em vez de adequação
+- Horas trabalhadas → otimizando para presença em vez de impacto
+- "Funciona" → otimizando para o curto prazo em vez de sustentabilidade
+
+A experiência não é sobre acumular certezas. É sobre trocar certezas superficiais por sabedoria contextual. É saber que a resposta para quase toda pergunta em engenharia de software é: **"depende"**.
+
+E ter 20 anos de contexto para saber do quê depende.

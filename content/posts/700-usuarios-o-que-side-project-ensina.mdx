@@ -1,0 +1,91 @@
+---
+title: "700 usuários, 10.000 horas: o que um side project ensina que nenhum curso ensina"
+description: "A história real do Logus Academy — de ideia simples a produto com centenas de usuários ativos. Decisões, erros e lições que só aparecem quando você lança algo no mundo real."
+date: "2026-03-25"
+tags: ["side-project", "produto", "empreendedorismo"]
+published: true
+image: "/images/posts/logus-academy.jpg"
+---
+
+Meu side project tem mais usuários do que a maioria das startups que levantaram seed. Custou R$0 de investimento. Deixa eu te contar o que aconteceu.
+
+## O problema
+
+Em 2016, minha esposa Valéria estava na academia — não a de ginástica, a acadêmica. Pesquisadoras e estudantes passavam **horas** transcrevendo entrevistas de áudio manualmente. As ferramentas disponíveis eram caras, imprecisas ou simplesmente não existiam em português.
+
+A dor era real. Não era um problema inventado em um pitch deck.
+
+## A primeira versão
+
+Construí a primeira versão do **Logus Academy** em NextJS com Firebase. Nada sofisticado:
+
+- Upload de áudio
+- Transcrição usando APIs de speech-to-text
+- Editor para correção do texto
+- Export em formatos acadêmicos
+
+Levou algumas semanas. O design era funcional, não bonito. O código era... funcional, não bonito também.
+
+**Lição #1:** Sua primeira versão vai ser feia. Lance assim mesmo. A alternativa — não lançar — é infinitamente pior.
+
+## Os primeiros usuários
+
+Os primeiros 10 usuários foram amigos da Valéria. Pesquisadores que precisavam transcrever entrevistas para dissertações e teses. O feedback foi imediato e brutal (no melhor sentido):
+
+- "A transcrição erra muitos nomes próprios"
+- "Preciso pausar e voltar o áudio com mais facilidade"
+- "O export não mantém a formatação ABNT"
+
+Cada feedback era um bug report disfarçado de reclamação. E cada reclamação me mostrava o que **realmente** importava — versus o que eu **achava** que importava.
+
+**Lição #2:** Seus primeiros 10 usuários valem mais que 10.000 pesquisas de mercado. Eles te dizem exatamente o que construir.
+
+## O crescimento orgânico
+
+Não gastei um centavo em marketing. O crescimento veio de:
+
+1. **Boca a boca acadêmico** — pesquisadores indicando para colegas
+2. **Grupos de WhatsApp** de pós-graduação
+3. **SEO básico** — páginas bem estruturadas para "transcrição de áudio acadêmica"
+
+Em 2 anos, já tinham mais de 200 usuários. Hoje são **700+ usuários ativos** com mais de **10.000 horas de áudio transcritas**.
+
+**Lição #3:** Se o problema é real e a solução funciona, o marketing se faz sozinho. Produto bom é a melhor estratégia de crescimento.
+
+## As decisões técnicas que importaram
+
+### Firebase foi a escolha certa
+
+Para um side project de uma pessoa, Firebase eliminou toda a complexidade de backend: auth, database, storage, hosting. Eu focava 100% no produto, não em infraestrutura.
+
+### NextJS como frontend
+
+Server-side rendering ajudou no SEO (os pesquisadores encontravam pelo Google). A performance era boa o suficiente. E eu já dominava React.
+
+### Não escalar prematuramente
+
+Com 700 usuários, ainda rodo no plano gratuito/básico do Firebase. Não precisei de Kubernetes, microservices ou "arquitetura enterprise". A complexidade que eu **não** adicionei foi tão importante quanto o código que escrevi.
+
+**Lição #4:** Não resolva problemas que você ainda não tem. Escale quando a dor de não escalar for real.
+
+## O que nenhum curso ensina
+
+Cursos ensinam como escrever código. Side projects ensinam:
+
+- **Como priorizar** — quando você é o único dev, PM, designer e suporte, aprende rápido o que realmente importa
+- **Como lidar com usuários reais** — pessoas com expectativas, frustrações e casos de uso que você nunca imaginou
+- **Como manter motivação** — não tem chefe cobrando, não tem sprint. A motivação tem que ser interna
+- **Como tomar decisões com informação incompleta** — você nunca vai ter todos os dados. Decide e ajusta
+- **Como medir sucesso de verdade** — não é stars no GitHub. São pessoas usando o que você construiu para resolver problemas reais
+
+## Meu conselho
+
+Se você é desenvolvedor e nunca lançou um side project, lance. Não precisa ser uma startup. Não precisa ter investidor. Não precisa ser perfeito.
+
+Precisa resolver **um** problema **real** para **uma** pessoa real.
+
+O resto vem.
+
+---
+
+*O Logus Academy continua ativo em [logusacademy.com.br](https://logusacademy.com.br). Se você é pesquisador ou conhece alguém que precisa transcrever áudio, está lá.*

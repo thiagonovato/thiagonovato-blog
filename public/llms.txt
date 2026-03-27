@@ -1,0 +1,29 @@
+# Thiago Novato - Software Engineer & Tech Writer
+> Personal blog and portfolio of Thiago Novato, a software engineer
+> with 20 years of experience building software at scale.
+> Content covers software engineering, career growth, React, Python,
+> Node.js, data engineering, machine learning, and tech industry insights.
+> Written in Portuguese (pt-BR) with some content in English.
+
+## Author
+- Name: Thiago Novato
+- Role: Software Engineer
+- Experience: 20+ years
+- Location: Florida, USA
+- Specialties: React, Node.js, Python, BigQuery, Machine Learning, Airflow
+- Currently: Enolytics (wine + data/AI), Intuit Mailchimp
+
+## Pages
+- [Home](https://thiagonovato.dev/)
+- [Blog](https://thiagonovato.dev/blog)
+- [About](https://thiagonovato.dev/about)
+- [Contact](https://thiagonovato.dev/contact)
+
+## Blog Topics
+- Software engineering best practices
+- Career advice for developers (junior to senior)
+- React, Node.js, Python tutorials and insights
+- Data engineering with BigQuery, Airflow, Kafka
+- Machine Learning applied to real industries
+- Personal growth and professional development in tech
+- International career (Brazilian developer in the US)
