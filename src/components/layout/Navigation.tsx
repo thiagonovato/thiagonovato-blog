@@ -1,13 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { SITE } from "@/lib/constants";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Navigation() {
+  const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
@@ -40,43 +42,47 @@ export function Navigation() {
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-1 md:flex">
-          {SITE.nav.map((item) => {
-            const isActive =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
-            return (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`relative rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
-                    isActive
-                      ? "text-accent"
-                      : "text-muted hover:text-foreground"
-                  }`}
-                >
-                  {item.label}
-                  {isActive && (
-                    <motion.div
-                      layoutId="nav-indicator"
-                      className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full bg-accent"
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    />
-                  )}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="flex items-center gap-2">
+          <ul className="hidden items-center gap-1 md:flex">
+            {SITE.nav.map((item) => {
+              const isActive =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`relative rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                      isActive
+                        ? "text-accent"
+                        : "text-muted hover:text-foreground"
+                    }`}
+                  >
+                    {t(item.key)}
+                    {isActive && (
+                      <motion.div
+                        layoutId="nav-indicator"
+                        className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full bg-accent"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="rounded-lg p-2 text-muted transition-colors hover:text-foreground md:hidden"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          <LanguageSwitcher />
+
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="rounded-lg p-2 text-muted transition-colors hover:text-foreground md:hidden"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
@@ -103,7 +109,7 @@ export function Navigation() {
                           : "text-muted hover:bg-card hover:text-foreground"
                       }`}
                     >
-                      {item.label}
+                      {t(item.key)}
                     </Link>
                   </li>
                 );

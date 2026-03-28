@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface TOCItem {
   id: string;
@@ -9,6 +10,7 @@ interface TOCItem {
 }
 
 export function TableOfContents() {
+  const t = useTranslations("blog");
   const [headings, setHeadings] = useState<TOCItem[]>([]);
   const [activeId, setActiveId] = useState("");
 
@@ -52,7 +54,7 @@ export function TableOfContents() {
   return (
     <nav className="sticky top-24 hidden max-h-[calc(100vh-8rem)] overflow-y-auto xl:block">
       <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
-        Neste artigo
+        {t("toc")}
       </p>
       <ul className="space-y-1.5 border-l border-card-border">
         {headings.map((heading) => (

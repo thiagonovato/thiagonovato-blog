@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { PostList } from "@/components/blog/PostList";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -7,15 +8,22 @@ import { generatePageMetadata } from "@/lib/seo";
 import { getAllPosts, getAllTags } from "@/lib/posts";
 import { SITE } from "@/lib/constants";
 
-export const metadata: Metadata = generatePageMetadata(
-  "Blog",
-  "Artigos sobre engenharia de software, carreira tech, React, Python, data engineering e crescimento profissional. Por Thiago Novato.",
-  "/blog"
-);
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
 
-export default function BlogPage() {
-  const posts = getAllPosts();
-  const allTags = getAllTags();
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
+  return generatePageMetadata(t("title"), t("metaDescription"), "/blog", locale);
+}
+
+export default async function BlogPage({ params }: PageProps) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
+  const tNav = await getTranslations({ locale, namespace: "nav" });
+  const posts = getAllPosts(locale);
+  const allTags = getAllTags(locale);
 
   const postData = posts.map((p) => ({
     slug: p.slug,
@@ -33,19 +41,19 @@ export default function BlogPage() {
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: `Blog - ${SITE.name}`,
-          description: "Artigos sobre engenharia de software, carreira tech e crescimento profissional",
+          description: t("collectionDescription"),
           url: `${SITE.url}/blog`,
         }}
       />
 
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
+      <Breadcrumbs items={[{ label: tNav("home"), href: "/" }, { label: tNav("blog") }]} />
 
       <div className="mt-8 mb-10">
         <GradientText as="h1" className="text-4xl font-bold sm:text-5xl">
-          Blog
+          {t("title")}
         </GradientText>
         <p className="mt-3 max-w-2xl text-lg text-muted">
-          Reflexões, aprendizados e insights de 20 anos construindo software.
+          {t("subtitle")}
         </p>
       </div>
 

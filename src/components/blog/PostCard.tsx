@@ -1,9 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar, Clock } from "lucide-react";
+import { useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { TiltCard } from "@/components/ui/TiltCard";
+import { DATE_LOCALES } from "@/lib/constants";
 
 interface PostCardProps {
   slug: string;
@@ -24,6 +26,9 @@ export function PostCard({
   tags,
   index,
 }: PostCardProps) {
+  const locale = useLocale();
+  const dateLocale = DATE_LOCALES[locale] || "en-US";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -54,7 +59,7 @@ export function PostCard({
           <div className="flex items-center gap-4 text-xs text-muted">
             <span className="flex items-center gap-1">
               <Calendar className="h-3 w-3" />
-              {new Date(date).toLocaleDateString("pt-BR", {
+              {new Date(date).toLocaleDateString(dateLocale, {
                 day: "2-digit",
                 month: "short",
                 year: "numeric",

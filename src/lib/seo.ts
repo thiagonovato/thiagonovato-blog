@@ -5,24 +5,32 @@ import type { Post } from "./posts";
 export function generatePageMetadata(
   title: string,
   description: string,
-  path: string = "",
+  pagePath: string = "",
+  locale: string = "en",
   image?: string
 ): Metadata {
-  const url = `${SITE.url}${path}`;
+  const localePath = locale === "en" ? "" : `/${locale}`;
+  const url = `${SITE.url}${localePath}${pagePath}`;
   const ogImage = image || `${SITE.url}/og/default.png`;
 
   return {
     title,
     description,
     metadataBase: new URL(SITE.url),
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      languages: {
+        en: `${SITE.url}${pagePath}`,
+        pt: `${SITE.url}/pt${pagePath}`,
+      },
+    },
     openGraph: {
       type: "website",
       url,
       title: `${title} | ${SITE.name}`,
       description,
       siteName: SITE.name,
-      locale: SITE.locale,
+      locale: locale === "pt" ? "pt_BR" : "en_US",
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
     twitter: {
@@ -35,22 +43,25 @@ export function generatePageMetadata(
   };
 }
 
-export function generatePostMetadata(post: Post): Metadata {
-  const url = `${SITE.url}/blog/${post.slug}`;
+export function generatePostMetadata(post: Post, locale: string = "en"): Metadata {
+  const localePath = locale === "en" ? "" : `/${locale}`;
+  const url = `${SITE.url}${localePath}/blog/${post.slug}`;
   const ogImage = `${SITE.url}/og/${post.slug}.png`;
 
   return {
     title: post.frontmatter.title,
     description: post.frontmatter.description,
     metadataBase: new URL(SITE.url),
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       type: "article",
       url,
       title: post.frontmatter.title,
       description: post.frontmatter.description,
       siteName: SITE.name,
-      locale: SITE.locale,
+      locale: locale === "pt" ? "pt_BR" : "en_US",
       publishedTime: post.frontmatter.date,
       modifiedTime: post.frontmatter.updatedAt || post.frontmatter.date,
       authors: [SITE.author.name],
@@ -75,7 +86,6 @@ export function personSchema() {
     jobTitle: SITE.author.jobTitle,
     url: SITE.url,
     email: SITE.author.email,
-    description: SITE.author.bio,
     sameAs: [SITE.social.linkedin, SITE.social.github],
     knowsAbout: [
       "React", "Node.js", "Python", "TypeScript", "Machine Learning",
@@ -90,7 +100,6 @@ export function webSiteSchema() {
     "@type": "WebSite",
     name: SITE.name,
     url: SITE.url,
-    description: SITE.description,
     author: { "@type": "Person", name: SITE.author.name },
   };
 }

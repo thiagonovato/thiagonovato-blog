@@ -1,9 +1,15 @@
-import Link from "next/link";
+"use client";
+
 import { Mail } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { GitHubIcon, LinkedInIcon } from "@/components/ui/SocialIcons";
 import { SITE } from "@/lib/constants";
 
 export function Footer() {
+  const t = useTranslations("footer");
+  const tNav = useTranslations("nav");
+
   return (
     <footer className="border-t border-card-border bg-card/50">
       <div className="mx-auto max-w-6xl px-6 py-12">
@@ -16,14 +22,13 @@ export function Footer() {
               <span className="font-medium text-foreground">Thiago Novato</span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-muted">
-              Software Engineer com 20 anos de experiência.
-              Escrevendo sobre código, carreira e tecnologia.
+              {t("description")}
             </p>
           </div>
 
           <div>
             <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">
-              Navegação
+              {t("navigation")}
             </h3>
             <ul className="space-y-2">
               {SITE.nav.map((item) => (
@@ -32,7 +37,7 @@ export function Footer() {
                     href={item.href}
                     className="text-sm text-muted transition-colors hover:text-accent"
                   >
-                    {item.label}
+                    {tNav(item.key)}
                   </Link>
                 </li>
               ))}
@@ -41,7 +46,7 @@ export function Footer() {
 
           <div>
             <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">
-              Social
+              {t("social")}
             </h3>
             <div className="flex gap-3">
               <a
@@ -75,8 +80,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-card-border pt-6 text-center text-xs text-muted">
           <p>
-            &copy; {new Date().getFullYear()} Thiago Novato. Built with Next.js
-            &amp; deployed on Vercel.
+            {t("copyright", { year: new Date().getFullYear() })}
           </p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { GradientText } from "@/components/ui/GradientText";
 import { TECH_STACK } from "@/lib/constants";
 
@@ -16,6 +17,8 @@ const categoryColors: Record<string, string> = {
 };
 
 export function TechStack() {
+  const t = useTranslations("techStack");
+
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <motion.div
@@ -26,10 +29,10 @@ export function TechStack() {
         className="mb-12 text-center"
       >
         <GradientText as="h2" className="text-3xl font-bold sm:text-4xl">
-          Tech Stack
+          {t("title")}
         </GradientText>
         <p className="mt-2 text-muted">
-          Tecnologias que uso no dia-a-dia em 20 anos de carreira.
+          {t("subtitle")}
         </p>
       </motion.div>
 

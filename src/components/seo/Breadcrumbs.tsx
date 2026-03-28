@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { SITE } from "@/lib/constants";
 import { JsonLd } from "./JsonLd";
 import { breadcrumbSchema } from "@/lib/seo";

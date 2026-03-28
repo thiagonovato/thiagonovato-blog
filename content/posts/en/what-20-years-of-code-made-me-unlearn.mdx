@@ -1,0 +1,60 @@
+---
+title: "What 20 years of code made me unlearn"
+description: "The technical beliefs I held with absolute conviction — and that experience proved to be completely wrong."
+date: "2026-03-27"
+tags: ["career", "reflection", "senior"]
+published: true
+image: "/images/posts/desaprender.jpg"
+---
+
+After 20 years writing code, my greatest skill isn't what I know. It's what I've **unlearned**.
+
+We start our careers accumulating certainties. Favorite frameworks, patterns that "always work," strong opinions about the "right way" to do things. And then, year after year, reality erodes those certainties until you realize: your strongest convictions were the ones holding you back the most.
+
+## 1. "Clean code is code with lots of abstractions"
+
+Early on, I thought a good engineer was one who created elegant abstractions. The more layers, more interfaces, more patterns — the better. I'd transform 10-line functions into 500-line architectures "just in case."
+
+**What I unlearned:** Premature abstraction is the root of much unnecessary complexity. Today, I write the simplest, most direct code possible. I only abstract when real duplication (not imagined) appears for the third time.
+
+> "Duplication is far cheaper than the wrong abstraction." — Sandi Metz
+
+## 2. "The more I code, the more productive I am"
+
+My productivity metric was lines of code per day. More commits, more PRs, more features. If I spent the whole day in meetings, it was a "wasted" day.
+
+**What I unlearned:** The decisions that most impacted the projects I worked on were made far from the editor. A 30-minute conversation with the product team can save weeks of development in the wrong direction. My most productive week as a senior dev? I deleted 2,000 lines of code and wrote zero new ones.
+
+## 3. "The best stack is the newest one"
+
+Every time a new framework dropped, I wanted to migrate. "React just launched? Let's rewrite." "This new NoSQL database is the future? Let's swap out PostgreSQL." I was a compulsive early adopter.
+
+**What I unlearned:** Mature, "boring" technology is frequently the best choice. PostgreSQL solves 90% of database problems. Express still works perfectly for most backends. The best stack is the one your team knows and that solves the problem — not the one with the most GitHub stars.
+
+## 4. "Working more hours = delivering more"
+
+In the beginning, I wore overtime as a badge of honor. Staying late meant commitment. If the project was behind, the solution was working the weekend.
+
+**What I unlearned:** After 6-7 hours of intense coding, quality plummets. The bug that took 4 hours to fix at 11 PM would have taken 15 minutes the next morning. Consistent 6 focused hours are worth more than 12 hours of distracted presence.
+
+## 5. "If it works, don't touch it"
+
+"The code is ugly, but it works." How many times did I say that? Avoiding refactoring out of fear of breaking something was my default. After all, happy customer = good code, right?
+
+**What I unlearned:** Code that "works but nobody wants to touch" is a ticking time bomb. Every day you postpone refactoring, the cost of changing it increases. The best time to improve code is when it's fresh in your mind — not 6 months from now when nobody remembers why that `if` with 15 conditions exists.
+
+---
+
+## The pattern behind it all
+
+Looking back, all these unlearnings have something in common: **I was optimizing for the wrong metric**.
+
+- Abstractions → optimizing for "elegance" instead of clarity
+- Lines of code → optimizing for output instead of outcome
+- Modern stack → optimizing for novelty instead of fit
+- Hours worked → optimizing for presence instead of impact
+- "It works" → optimizing for short-term instead of sustainability
+
+Experience isn't about accumulating certainties. It's about trading superficial certainties for contextual wisdom. It's knowing that the answer to almost every question in software engineering is: **"it depends."**
+
+And having 20 years of context to know what it depends on.

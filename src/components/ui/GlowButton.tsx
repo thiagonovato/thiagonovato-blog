@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Link } from "@/i18n/navigation";
 import type { ReactNode } from "react";
 
 interface GlowButtonProps {
@@ -29,17 +30,28 @@ export function GlowButton({
 
   const classes = `${base} ${variants[variant]} ${className}`;
 
-  const Component = href ? motion.a : motion.button;
+  if (href) {
+    return (
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.98 }}
+        className="inline-block"
+      >
+        <Link href={href} className={classes}>
+          {children}
+        </Link>
+      </motion.div>
+    );
+  }
 
   return (
-    <Component
-      href={href}
+    <motion.button
       onClick={onClick}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       className={classes}
     >
       {children}
-    </Component>
+    </motion.button>
   );
 }

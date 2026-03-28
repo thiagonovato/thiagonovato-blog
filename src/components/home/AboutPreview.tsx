@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { GlowButton } from "@/components/ui/GlowButton";
 import { GradientText } from "@/components/ui/GradientText";
 
 export function AboutPreview() {
+  const t = useTranslations("aboutPreview");
+
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="grid items-center gap-12 md:grid-cols-2">
@@ -29,18 +32,14 @@ export function AboutPreview() {
                 </p>
                 <p>
                   <span className="text-muted">experience:</span>{" "}
-                  <span className="text-amber-400">&quot;20 years&quot;</span>,
-                </p>
-                <p>
-                  <span className="text-muted">location:</span>{" "}
-                  <span className="text-emerald-400">&quot;Florida, USA&quot;</span>,
+                  <span className="text-amber-400">&quot;20+ years&quot;</span>,
                 </p>
                 <p>
                   <span className="text-muted">passion:</span>{" "}
-                  <span className="text-emerald-400">&quot;Building things that matter&quot;</span>,
+                  <span className="text-emerald-400">&quot;{t("codePassion")}&quot;</span>,
                 </p>
                 <p>
-                  <span className="text-muted">usersImpacted:</span>{" "}
+                  <span className="text-muted">resultsProcessed:</span>{" "}
                   <span className="text-violet-400">1_000_000</span>+,
                 </p>
               </div>
@@ -56,22 +55,17 @@ export function AboutPreview() {
           transition={{ duration: 0.6 }}
         >
           <GradientText as="h2" className="text-3xl font-bold sm:text-4xl">
-            Sobre Mim
+            {t("title")}
           </GradientText>
           <p className="mt-4 leading-relaxed text-muted">
-            De automação industrial a Machine Learning para a indústria de
-            vinhos. Em 20 anos de carreira, construí sistemas que processaram
-            mais de 1 milhão de resultados, criei produtos usados por centenas de
-            pessoas, e aprendi que as melhores soluções vêm de quem entende
-            tanto o código quanto o problema.
+            {t("description1")}
           </p>
           <p className="mt-3 leading-relaxed text-muted">
-            Hoje, além de engenheiro, estou compartilhando tudo que aprendi nessa
-            jornada.
+            {t("description2")}
           </p>
           <div className="mt-6">
             <GlowButton href="/about" variant="secondary">
-              Conhecer minha história <ArrowRight className="h-4 w-4" />
+              {t("cta")} <ArrowRight className="h-4 w-4" />
             </GlowButton>
           </div>
         </motion.div>

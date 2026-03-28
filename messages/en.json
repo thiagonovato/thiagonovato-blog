@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "title": "Thiago Novato | Software Engineer & Tech Writer",
+    "description": "Software Engineer with 20+ years of experience. Blog about software engineering, tech career, React, Python, data engineering, and professional growth.",
+    "authorBio": "Software Engineer with 20+ years of experience — from PHP development in government to data engineering for the wine industry. I've worked in industrial automation, technical leadership, and systems that processed over 1 million results. Creator of Logus Academy (700+ users, 10,000+ hours transcribed)."
+  },
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "description": "Software Engineer with 20+ years of experience. Writing about code, career, and technology.",
+    "navigation": "Navigation",
+    "social": "Social",
+    "copyright": "© {year} Thiago Novato. Built with Next.js & deployed on Vercel."
+  },
+  "hero": {
+    "badge": "20+ years building software",
+    "greeting": "Hi, I'm ",
+    "description": "Software Engineer with 20+ years of experience — from government internships to data engineering for the wine industry. Writing about code, career, and lessons from two decades building software.",
+    "ctaBlog": "Read the Blog",
+    "ctaAbout": "About Me"
+  },
+  "featured": {
+    "title": "Latest Posts",
+    "subtitle": "Reflections on code, career, and technology.",
+    "viewAll": "View all",
+    "viewAllMobile": "View all posts"
+  },
+  "aboutPreview": {
+    "title": "About Me",
+    "description1": "From intern developing PHP systems to data engineer for the wine industry. In 20+ years, I've worked in industrial automation, technical leadership, and systems that processed over 1 million results.",
+    "description2": "Today, besides being an engineer, I'm sharing everything I've learned on this journey.",
+    "cta": "Learn my story",
+    "codePassion": "Building things that matter"
+  },
+  "techStack": {
+    "title": "Tech Stack",
+    "subtitle": "Technologies I use daily across 20+ years of career."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Reflections, learnings, and insights from more than a decade building software.",
+    "metaDescription": "Articles about software engineering, tech career, React, Python, data engineering, and professional growth. By Thiago Novato.",
+    "collectionDescription": "Articles about software engineering, tech career, and professional growth",
+    "search": "Search posts...",
+    "all": "All",
+    "empty": "No posts found.",
+    "words": "words",
+    "prevPost": "Previous post",
+    "nextPost": "Next post",
+    "toc": "In this article"
+  },
+  "about": {
+    "title": "About Me",
+    "metaDescription": "Meet Thiago Novato: Software Engineer with 20+ years of experience, from government internships to data engineering for the wine industry.",
+    "experienceLabel": "Years of experience",
+    "resultsLabel": "Results processed",
+    "usersLabel": "Logus Academy Users",
+    "hoursLabel": "Hours transcribed",
+    "intro": "My name is <bold>Thiago Novato</bold>, and for over 20 years I've been building software. I started in 2005 as an intern developing systems in PHP and MySQL. From there, I went through industrial automation, technical leadership, and now work in data engineering for the wine industry.",
+    "journeyTitle": "The Journey",
+    "journeyText": "My journey went through diverse contexts: government internships, industrial automation programming PLCs and Ladder, teaching at technical institutes, and then diving into full-stack web development. I worked as Tech Lead coordinating teams and architecture, and built systems that processed over <bold>1 million test results</bold>. In parallel, I created <bold>Logus Academy</bold>, a transcription platform with 700+ users and 10,000+ hours transcribed.",
+    "todayTitle": "Today",
+    "todayText": "Currently, I work as a Software Engineer building data pipelines with Python, Airflow, dbt, and BigQuery for the wine industry. I integrate e-commerce platforms and develop dashboards in React. Previously, I worked on API integrations and advanced technical support for email marketing platforms.",
+    "whyTitle": "Why This Blog",
+    "whyText1": "After two decades of experiences, mistakes, and learnings, I decided it was time to share. Not shallow tutorials or generic lists — but real reflections on building software for 20 years, navigating an international career, and staying in continuous learning mode.",
+    "whyText2": "If you're a developer, software engineer, or someone who uses technology to build things that matter — this space is for you.",
+    "timelineTitle": "Timeline"
+  },
+  "timeline": {
+    "2005": { "title": "First Steps", "description": "Started as intern developing systems in PHP and MySQL for government institutions." },
+    "2010": { "title": "Industrial Automation", "description": "System Analyst programming PLCs and control systems for industrial companies." },
+    "2016": { "title": "Full-Stack Web", "description": "Transitioned to modern web development with React, Node.js, and Firebase." },
+    "2019": { "title": "1 Million Results", "description": "Built systems that processed over 1 million test results with Kafka and NestJS." },
+    "2021": { "title": "Technical Leadership", "description": "Tech Lead coordinating teams and architecture for multiple projects." },
+    "2023": { "title": "International Market", "description": "Started working with international teams focused on integrations and data engineering." },
+    "2026": { "title": "Tech Writing", "description": "Consolidating this blog to share 20 years of learnings in software engineering." }
+  },
+  "contact": {
+    "title": "Contact",
+    "metaDescription": "Get in touch with Thiago Novato. Software Engineer available for projects, collaborations, and opportunities.",
+    "subtitle": "Want to talk about technology, collaborate on a project, or just exchange ideas? Send me a message.",
+    "email": "Email",
+    "formTitle": "Send a message",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message",
+    "formSubmit": "Send Message"
+  }
+}

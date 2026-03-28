@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 
-const POSTS_DIR = path.join(process.cwd(), "content/posts");
+const CONTENT_DIR = path.join(process.cwd(), "content/posts");
 
 export interface PostFrontmatter {
   title: string;
@@ -23,13 +23,18 @@ export interface Post {
   wordCount: number;
 }
 
-export function getAllPosts(): Post[] {
-  if (!fs.existsSync(POSTS_DIR)) return [];
+function getPostsDir(locale: string): string {
+  return path.join(CONTENT_DIR, locale);
+}
 
-  const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".mdx"));
+export function getAllPosts(locale: string = "en"): Post[] {
+  const postsDir = getPostsDir(locale);
+  if (!fs.existsSync(postsDir)) return [];
+
+  const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".mdx"));
 
   const posts = files
-    .map((file) => getPostBySlug(file.replace(/\.mdx$/, "")))
+    .map((file) => getPostBySlug(file.replace(/\.mdx$/, ""), locale))
     .filter((post): post is Post => post !== null && post.frontmatter.published)
     .sort(
       (a, b) =>
@@ -40,8 +45,8 @@ export function getAllPosts(): Post[] {
   return posts;
 }
 
-export function getPostBySlug(slug: string): Post | null {
-  const filePath = path.join(POSTS_DIR, `${slug}.mdx`);
+export function getPostBySlug(slug: string, locale: string = "en"): Post | null {
+  const filePath = path.join(getPostsDir(locale), `${slug}.mdx`);
 
   if (!fs.existsSync(filePath)) return null;
 
@@ -58,21 +63,21 @@ export function getPostBySlug(slug: string): Post | null {
   };
 }
 
-export function getAllTags(): string[] {
-  const posts = getAllPosts();
+export function getAllTags(locale: string = "en"): string[] {
+  const posts = getAllPosts(locale);
   const tagsSet = new Set<string>();
   posts.forEach((post) => post.frontmatter.tags.forEach((tag) => tagsSet.add(tag)));
   return Array.from(tagsSet).sort();
 }
 
-export function getPostsByTag(tag: string): Post[] {
-  return getAllPosts().filter((post) =>
+export function getPostsByTag(tag: string, locale: string = "en"): Post[] {
+  return getAllPosts(locale).filter((post) =>
     post.frontmatter.tags.includes(tag)
   );
 }
 
-export function getAdjacentPosts(slug: string) {
-  const posts = getAllPosts();
+export function getAdjacentPosts(slug: string, locale: string = "en") {
+  const posts = getAllPosts(locale);
   const index = posts.findIndex((p) => p.slug === slug);
   return {
     prev: index < posts.length - 1 ? posts[index + 1] : null,

@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "title": "Thiago Novato | Software Engineer & Tech Writer",
+    "description": "Software Engineer com 20+ anos de experiência. Blog sobre engenharia de software, carreira tech, React, Python, data engineering e crescimento profissional.",
+    "authorBio": "Software Engineer com 20+ anos de experiência — de desenvolvimento PHP no governo a data engineering para a indústria de vinhos. Passei por automação industrial, liderança técnica e sistemas que processaram mais de 1 milhão de resultados. Criador do Logus Academy (700+ usuários, 10.000+ horas transcritas)."
+  },
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "footer": {
+    "description": "Software Engineer com 20+ anos de experiência. Escrevendo sobre código, carreira e tecnologia.",
+    "navigation": "Navegação",
+    "social": "Social",
+    "copyright": "© {year} Thiago Novato. Built with Next.js & deployed on Vercel."
+  },
+  "hero": {
+    "badge": "20+ anos construindo software",
+    "greeting": "Olá, eu sou ",
+    "description": "Engenheiro de Software com 20+ anos de experiência — de estágios no governo a data engineering para a indústria de vinhos. Escrevendo sobre código, carreira e as lições de duas décadas construindo software.",
+    "ctaBlog": "Ler o Blog",
+    "ctaAbout": "Sobre Mim"
+  },
+  "featured": {
+    "title": "Últimos Posts",
+    "subtitle": "Reflexões sobre código, carreira e tecnologia.",
+    "viewAll": "Ver todos",
+    "viewAllMobile": "Ver todos os posts"
+  },
+  "aboutPreview": {
+    "title": "Sobre Mim",
+    "description1": "De estagiário desenvolvendo sistemas em PHP a engenheiro de dados na indústria de vinhos. Em 20+ anos, passei por automação industrial, liderança técnica e sistemas que processaram mais de 1 milhão de resultados.",
+    "description2": "Hoje, além de engenheiro, estou compartilhando tudo que aprendi nessa jornada.",
+    "cta": "Conhecer minha história",
+    "codePassion": "Building things that matter"
+  },
+  "techStack": {
+    "title": "Tech Stack",
+    "subtitle": "Tecnologias que uso no dia-a-dia em 20+ anos de carreira."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Reflexões, aprendizados e insights de mais de uma década construindo software.",
+    "metaDescription": "Artigos sobre engenharia de software, carreira tech, React, Python, data engineering e crescimento profissional. Por Thiago Novato.",
+    "collectionDescription": "Artigos sobre engenharia de software, carreira tech e crescimento profissional",
+    "search": "Buscar posts...",
+    "all": "Todos",
+    "empty": "Nenhum post encontrado.",
+    "words": "palavras",
+    "prevPost": "Post anterior",
+    "nextPost": "Próximo post",
+    "toc": "Neste artigo"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "metaDescription": "Conheça Thiago Novato: Software Engineer com 20+ anos de experiência, de estágios no governo a data engineering para a indústria de vinhos.",
+    "experienceLabel": "Anos de experiência",
+    "resultsLabel": "Resultados processados",
+    "usersLabel": "Usuários Logus Academy",
+    "hoursLabel": "Horas transcritas",
+    "intro": "Meu nome é <bold>Thiago Novato</bold>, e há mais de 20 anos eu construo software. Comecei em 2005 como estagiário desenvolvendo sistemas em PHP e MySQL. De lá, passei por automação industrial, liderança técnica, e hoje trabalho com engenharia de dados para a indústria de vinhos.",
+    "journeyTitle": "A Jornada",
+    "journeyText": "Minha trajetória passou por contextos bem diversos: estágios no governo, automação industrial programando PLCs e Ladder, professor em institutos técnicos, e depois mergulhei no desenvolvimento web full-stack. Trabalhei como Tech Lead coordenando times e arquitetura, e construí sistemas que processaram mais de <bold>1 milhão de resultados</bold> de exames. Em paralelo, criei o <bold>Logus Academy</bold>, plataforma de transcrição com 700+ usuários e 10.000+ horas transcritas.",
+    "todayTitle": "Hoje",
+    "todayText": "Atualmente trabalho como Software Engineer construindo pipelines de dados com Python, Airflow, dbt e BigQuery para a indústria de vinhos. Integro plataformas de e-commerce e desenvolvo dashboards em React. Anteriormente, trabalhei com integrações de APIs e suporte técnico avançado para plataformas de email marketing.",
+    "whyTitle": "Por Que Este Blog",
+    "whyText1": "Depois de duas décadas acumulando experiências, erros e aprendizados, decidi que era hora de compartilhar. Não tutoriais rasos ou listas genéricas — mas reflexões reais sobre construir software por 20 anos, navegar uma carreira internacional e continuar aprendendo sempre.",
+    "whyText2": "Se você é desenvolvedor, engenheiro de software, ou alguém que usa tecnologia para construir coisas que importam — este espaço é para você.",
+    "timelineTitle": "Timeline"
+  },
+  "timeline": {
+    "2005": { "title": "Primeiros Passos", "description": "Início como estagiário desenvolvendo sistemas em PHP e MySQL para instituições governamentais." },
+    "2010": { "title": "Automação Industrial", "description": "System Analyst programando PLCs e sistemas de controle para empresas industriais." },
+    "2016": { "title": "Full-Stack Web", "description": "Transição para desenvolvimento web moderno com React, Node.js e Firebase." },
+    "2019": { "title": "1 Milhão de Resultados", "description": "Construí sistemas que processaram mais de 1 milhão de resultados de exames com Kafka e NestJS." },
+    "2021": { "title": "Liderança Técnica", "description": "Tech Lead coordenando times e arquitetura em múltiplos projetos." },
+    "2023": { "title": "Mercado Internacional", "description": "Início de trabalho com times internacionais com foco em integrações e data engineering." },
+    "2026": { "title": "Tech Writing", "description": "Consolidação deste blog para compartilhar 20 anos de aprendizados em engenharia de software." }
+  },
+  "contact": {
+    "title": "Contato",
+    "metaDescription": "Entre em contato com Thiago Novato. Software Engineer disponível para projetos, colaborações e oportunidades.",
+    "subtitle": "Quer conversar sobre tecnologia, colaborar em um projeto ou apenas trocar uma ideia? Me manda uma mensagem.",
+    "email": "Email",
+    "formTitle": "Envie uma mensagem",
+    "formName": "Nome",
+    "formEmail": "Email",
+    "formMessage": "Mensagem",
+    "formSubmit": "Enviar Mensagem"
+  }
+}

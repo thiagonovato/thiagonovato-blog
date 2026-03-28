@@ -1,10 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Calendar } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { GradientText } from "@/components/ui/GradientText";
+import { DATE_LOCALES } from "@/lib/constants";
 
 interface PostPreview {
   slug: string;
@@ -16,6 +18,10 @@ interface PostPreview {
 }
 
 export function FeaturedPosts({ posts }: { posts: PostPreview[] }) {
+  const t = useTranslations("featured");
+  const locale = useLocale();
+  const dateLocale = DATE_LOCALES[locale] || "en-US";
+
   if (posts.length === 0) return null;
 
   return (
@@ -29,17 +35,17 @@ export function FeaturedPosts({ posts }: { posts: PostPreview[] }) {
       >
         <div>
           <GradientText as="h2" className="text-3xl font-bold sm:text-4xl">
-            Últimos Posts
+            {t("title")}
           </GradientText>
           <p className="mt-2 text-muted">
-            Reflexões sobre código, carreira e tecnologia.
+            {t("subtitle")}
           </p>
         </div>
         <Link
           href="/blog"
           className="hidden items-center gap-1 text-sm text-accent transition-colors hover:text-accent-light sm:flex"
         >
-          Ver todos <ArrowRight className="h-4 w-4" />
+          {t("viewAll")} <ArrowRight className="h-4 w-4" />
         </Link>
       </motion.div>
 
@@ -76,7 +82,7 @@ export function FeaturedPosts({ posts }: { posts: PostPreview[] }) {
                 <div className="flex items-center gap-4 text-xs text-muted">
                   <span className="flex items-center gap-1">
                     <Calendar className="h-3 w-3" />
-                    {new Date(post.date).toLocaleDateString("pt-BR", {
+                    {new Date(post.date).toLocaleDateString(dateLocale, {
                       day: "2-digit",
                       month: "short",
                       year: "numeric",
@@ -98,7 +104,7 @@ export function FeaturedPosts({ posts }: { posts: PostPreview[] }) {
           href="/blog"
           className="inline-flex items-center gap-1 text-sm text-accent"
         >
-          Ver todos os posts <ArrowRight className="h-4 w-4" />
+          {t("viewAllMobile")} <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
     </section>

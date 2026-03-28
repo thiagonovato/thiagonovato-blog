@@ -6,8 +6,13 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { personSchema, webSiteSchema } from "@/lib/seo";
 import { getAllPosts } from "@/lib/posts";
 
-export default function Home() {
-  const posts = getAllPosts().slice(0, 3);
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function Home({ params }: PageProps) {
+  const { locale } = await params;
+  const posts = getAllPosts(locale).slice(0, 3);
 
   const featuredPosts = posts.map((p) => ({
     slug: p.slug,

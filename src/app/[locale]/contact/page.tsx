@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Mail, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { GitHubIcon, LinkedInIcon } from "@/components/ui/SocialIcons";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -7,11 +8,15 @@ import { GradientText } from "@/components/ui/GradientText";
 import { generatePageMetadata, breadcrumbSchema } from "@/lib/seo";
 import { SITE } from "@/lib/constants";
 
-export const metadata: Metadata = generatePageMetadata(
-  "Contact",
-  "Entre em contato com Thiago Novato. Software Engineer disponível para projetos, colaborações e oportunidades.",
-  "/contact"
-);
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+  return generatePageMetadata(t("title"), t("metaDescription"), "/contact", locale);
+}
 
 const socialLinks = [
   {
@@ -34,26 +39,29 @@ const socialLinks = [
   },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: PageProps) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+  const tNav = await getTranslations({ locale, namespace: "nav" });
+
   return (
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: SITE.url },
-          { name: "Contact" },
+          { name: tNav("home"), url: SITE.url },
+          { name: tNav("contact") },
         ])}
       />
 
       <div className="mx-auto max-w-4xl px-6 py-12">
-        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
+        <Breadcrumbs items={[{ label: tNav("home"), href: "/" }, { label: tNav("contact") }]} />
 
         <div className="mt-8">
           <GradientText as="h1" className="text-4xl font-bold sm:text-5xl">
-            Contato
+            {t("title")}
           </GradientText>
           <p className="mt-3 max-w-xl text-lg text-muted">
-            Quer conversar sobre tecnologia, colaborar em um projeto ou apenas
-            trocar uma ideia? Me manda uma mensagem.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -77,29 +85,20 @@ export default function ContactPage() {
               </a>
             ))}
 
-            <div className="flex items-center gap-4 rounded-xl border border-card-border bg-card p-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                <MapPin className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="font-medium text-foreground">Localização</p>
-                <p className="text-sm text-muted">{SITE.author.location}</p>
-              </div>
-            </div>
           </div>
 
           <div className="rounded-xl border border-card-border bg-card p-6">
             <h2 className="mb-4 text-lg font-semibold text-foreground">
-              Envie uma mensagem
+              {t("formTitle")}
             </h2>
             <form
-              action={`https://formspree.io/f/placeholder`}
+              action="https://formspree.io/f/placeholder"
               method="POST"
               className="space-y-4"
             >
               <div>
                 <label htmlFor="name" className="mb-1.5 block text-sm text-muted">
-                  Nome
+                  {t("formName")}
                 </label>
                 <input
                   type="text"
@@ -111,7 +110,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <label htmlFor="email" className="mb-1.5 block text-sm text-muted">
-                  Email
+                  {t("formEmail")}
                 </label>
                 <input
                   type="email"
@@ -123,7 +122,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <label htmlFor="message" className="mb-1.5 block text-sm text-muted">
-                  Mensagem
+                  {t("formMessage")}
                 </label>
                 <textarea
                   id="message"
@@ -137,7 +136,7 @@ export default function ContactPage() {
                 type="submit"
                 className="w-full cursor-pointer rounded-lg bg-accent px-6 py-3 text-sm font-medium text-background transition-all hover:bg-accent-light hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]"
               >
-                Enviar Mensagem
+                {t("formSubmit")}
               </button>
             </form>
           </div>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Terminal } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { GlowButton } from "@/components/ui/GlowButton";
 
 const roles = [
@@ -13,6 +14,7 @@ const roles = [
 ];
 
 export function HeroSection() {
+  const t = useTranslations("hero");
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -76,7 +78,7 @@ export function HeroSection() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-card-border bg-card/80 px-4 py-2 text-sm text-muted backdrop-blur-sm"
         >
           <Terminal className="h-3.5 w-3.5 text-accent" />
-          <span>20 years building software</span>
+          <span>{t("badge")}</span>
         </motion.div>
 
         <motion.h1
@@ -85,7 +87,7 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-7xl"
         >
-          <span className="text-foreground">Olá, eu sou </span>
+          <span className="text-foreground">{t("greeting")}</span>
           <span className="bg-gradient-to-r from-white via-accent-light to-accent bg-clip-text text-transparent">
             Thiago Novato
           </span>
@@ -112,9 +114,7 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
         >
-          Engenheiro de Software com 20 anos de experiência construindo soluções
-          que impactam milhares de pessoas. Escrevendo sobre código, carreira e
-          as lições que só o tempo ensina.
+          {t("description")}
         </motion.p>
 
         <motion.div
@@ -124,10 +124,10 @@ export function HeroSection() {
           className="mt-8 flex flex-wrap items-center justify-center gap-4"
         >
           <GlowButton href="/blog" variant="primary">
-            Ler o Blog
+            {t("ctaBlog")}
           </GlowButton>
           <GlowButton href="/about" variant="secondary">
-            Sobre Mim
+            {t("ctaAbout")}
           </GlowButton>
         </motion.div>
 
