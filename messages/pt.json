@@ -2,7 +2,7 @@
   "metadata": {
     "title": "Thiago Novato | Software Engineer & Tech Writer",
     "description": "Software Engineer com 20+ anos de experiência. Blog sobre engenharia de software, carreira tech, React, Python, data engineering e crescimento profissional.",
-    "authorBio": "Software Engineer com 20+ anos de experiência — de desenvolvimento PHP no governo a data engineering para a indústria de vinhos. Passei por automação industrial, liderança técnica e sistemas que processaram mais de 1 milhão de resultados. Criador do Logus Academy (700+ usuários, 10.000+ horas transcritas)."
+    "authorBio": "Software Engineer com 20+ anos de experiência — de desenvolvimento web a software engineering. Passei por automação industrial, liderança técnica e sistemas que processaram mais de 1 milhão de resultados. Criador do Logus Academy (700+ usuários, 10.000+ horas transcritas)."
   },
   "nav": {
     "home": "Home",
@@ -19,7 +19,7 @@
   "hero": {
     "badge": "20+ anos construindo software",
     "greeting": "Olá, eu sou ",
-    "description": "Engenheiro de Software com 20+ anos de experiência — de estágios no governo a data engineering para a indústria de vinhos. Escrevendo sobre código, carreira e as lições de duas décadas construindo software.",
+    "description": "Engenheiro de Software com 20+ anos de experiência — de estágios no governo a software engineering. Escrevendo sobre código, carreira e as lições de duas décadas construindo software.",
     "ctaBlog": "Ler o Blog",
     "ctaAbout": "Sobre Mim"
   },
@@ -31,7 +31,7 @@
   },
   "aboutPreview": {
     "title": "Sobre Mim",
-    "description1": "De estagiário desenvolvendo sistemas em PHP a engenheiro de dados na indústria de vinhos. Em 20+ anos, passei por automação industrial, liderança técnica e sistemas que processaram mais de 1 milhão de resultados.",
+    "description1": "De estagiário desenvolvendo sistemas em PHP a Software Engineer. Em 20+ anos, passei por automação industrial, liderança técnica e sistemas que processaram mais de 1 milhão de resultados.",
     "description2": "Hoje, além de engenheiro, estou compartilhando tudo que aprendi nessa jornada.",
     "cta": "Conhecer minha história",
     "codePassion": "Building things that matter"
